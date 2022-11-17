@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import GenButton from './components/GenButton';
 import User from './components/User';
 
@@ -26,6 +26,10 @@ function App() {
         const body = await fetchUserData()
         setUser(body.results)
     }
+
+    useEffect(() => {
+        handleClick()
+    },[])
 
     return (
     <div className="App">
